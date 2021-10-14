@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap');
+*{
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+header{
+    position: relative;
+    height: 100vh;
+}
+header::after{
+content: "";
+background-image: url(../img/barber-15.jpg);
+background-size: cover;
+background-position: center center;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+filter: brightness(.7);
+z-index: -1;
+}
+nav{
+    /* position: fixed; */
+    width: 100%;
+}
+nav div.container{
+    padding: 10px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+nav div.logo-brand{
+width: 12%;
+}
+nav div.logo-brand img{
+    width: 100%;
+}
+nav div.nav-items{
+
+}
+nav ul.nav-list{
+    display: flex;
+}
+nav li.link-item{
+    list-style: none;
+    text-align: center;
+    width: 70px;
+    margin: 0 2px;
+  
+}
+
+nav li.link-item a{
+    display: block;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+    transition:  1ms;
+}
+nav a#home{
+    color: tan;
+}
+
+nav li.link-item:hover a{
+
+    transform: translateY(-10px) scale(1.2);
+    color: tan;
+}
+
+nav div.toggle-icon{
+    display: none;
+}
+
+main{
+    width: 70%;
+    padding: 50px;
+    color: #fff;
+
+}
+main div.welcome{
+    padding:0 10px;
+    width: 80%;
+}
+main h1{
+    font-weight: lighter;
+    font-size: 76px;
+    padding:20px 0 ;
+}
+main p{
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px ;
+    line-height: 40px;
+}
+
+main button{
+    width: 190px;
+    height: 60px;
+    margin: 5px;
+    transition:background-image 1s, color 1s;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(to bottom left,rgb(174,159,104), rgb(174,151,104),rgb(174,159,104));
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+main button:hover{
+    color: black;
+    background-image: linear-gradient(to bottom left,#fff, #fff,#fff);
+}
+@media (max-width:1124px){
+    main{
+        width: 80%;
+    }
+
+}
+/*tablet*/
+@media (max-width:992px){
+    nav{
+        background-color: #5d5851;
+        position: relative;
+    }
+    nav div.container{
+        padding: 10px 50px;
+    }
+    nav div.logo-brand{
+    width: 20%;
+    }
+    nav div.logo-brand img{
+        width: 100%;
+    }
+    nav div.nav-items{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0; 
+        transform: translateY(100%);
+        background-color: #fff ;
+        font-weight: lighter;
+        padding: 0px 25px;
+    }
+    
+    nav ul.nav-list{
+        display: none ;
+    }
+    nav li.link-item{
+        border-bottom:.5px solid rgba(150, 149, 149, 0.295) ;
+        text-align: left;
+        width: 100%;
+        padding:5px 0;
+    }
+    nav li.link-item a{
+        display: block;
+        padding: 10px;
+        font-size: 17px;
+        color: black;
+        text-decoration: none;
+        transition:  1ms;
+    }
+    nav a#home{
+        color: black;
+    }
+    nav a#home:hover{
+        color:tan;
+    }
+    nav li.link-item:hover a{
+        transform: translateY(0) scale(1);
+        color: tan;
+    }
+    nav div.toggle-icon{
+        display: block;
+        color: #fff;
+    }
+    nav .toggle{
+        font-size: 25px;
+        cursor: pointer;
+    }
+    main{
+        width: 100%;
+    }        
+}
+
+@media (max-width:480px){
+    nav div.logo-brand{
+        width: 30%;
+        }
+        main{
+            padding: 50px 10px;
+        }
+
+        main div.welcome{
+            padding:0 10px;
+            width: 90%;
+        }
+        main h1{
+            font-weight: lighter;
+            font-size: 34px;
+            padding:10px 0 ;
+        }
+        main p{
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px ;
+            line-height: 30px;
+        }
+
+        main button{
+            width: 40%;
+            height: 45px;
+            margin: 5px;
+            transition:background-image 1s, color 1s;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+}
