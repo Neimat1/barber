@@ -5,26 +5,75 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* overflow: hidden; */
+}
+a{
+    text-decoration: none;
+}
+/******************************************************/
+/********************Class Colors**********************/
+.bg-218fe6{
+    background-color: #218fe6;
+}
+.bg-f44336{
+    background-color: #f44336;
+}
+.bg-e91e63{
+    background-color: #e91e63;
+}
+.bg-9c27b0{
+    background-color: #9c27b0;
+}
+.bg-673ab7{
+    background-color: #673ab7;
+}
+.bg-3f51b5{
+    background-color: #3f51b5;
+}
+.bg-00bcd4{
+    background-color: #00bcd4;
+}
+.bg-03a9f4{
+    background-color: #03a9f4;
+}
+.bg-607d8b{
+    background-color: #607d8b;
+}
+.bg-795548{
+    background-color: #795548;
+}
+.bg-ff5722{
+    background-color: #ff5722;
+}
+.bg-ff9800{
+    background-color: #ff9800;
+}
+.bg-ae9768{
+    background-color:#ae9768;
+}
+/******************************************************/
+div.clear-fix{
+    clear: both;
 }
 header{
     position: relative;
     height: 100vh;
 }
 header::after{
-content: "";
-background-image: url(../img/barber-15.jpg);
-background-size: cover;
-background-position: center center;
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-filter: brightness(.7);
-z-index: -1;
+    content: "";
+    background-image: url(../img/barber-15.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: brightness(.7);
+    z-index: -1;
 }
 nav{
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
 }
 nav div.container{
@@ -76,14 +125,16 @@ nav div.toggle-icon{
 }
 
 main{
-    width: 70%;
-    padding: 50px;
+    padding: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     color: #fff;
-
 }
-main div.welcome{
-    padding:0 10px;
-    width: 80%;
+main div.main-content{
+    width:40%;
 }
 main h1{
     font-weight: lighter;
@@ -101,12 +152,11 @@ main button{
     width: 190px;
     height: 60px;
     margin: 5px;
-    transition:background-image 1s, color 1s;
+    transition:background-color 1s, color 1s;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: bold;
     color: #fff;
-    background-image: linear-gradient(to bottom left,rgb(174,159,104), rgb(174,151,104),rgb(174,159,104));
     letter-spacing: 1px;
     border-radius: 5px;
     border: none;
@@ -114,21 +164,28 @@ main button{
 }
 main button:hover{
     color: black;
-    background-image: linear-gradient(to bottom left,#fff, #fff,#fff);
+    background-color: #fff;
 }
-@media (max-width:1124px){
-    main{
-        width: 80%;
-    }
-
+/*xxl >=1440*/
+/*xl >=1200*/
+/*lg >= 992*/
+/*md >=768*/
+/*sm >=576*/
+/*xs <576*/
+@media (min-width:992px) and (max-width:1199px){
+    main button{
+        width: 150px;
+        height: 50px;
+        padding: 0 2px;
+        font-size: 14px;
+    }  
 }
-/*tablet*/
-@media (max-width:992px){
+@media (min-width:768px) and (max-width:991px){
     nav{
         background-color: #5d5851;
-        position: relative;
     }
     nav div.container{
+        position: relative;
         padding: 10px 50px;
     }
     nav div.logo-brand{
@@ -182,43 +239,182 @@ main button:hover{
     nav .toggle{
         font-size: 25px;
         cursor: pointer;
-    }
-    main{
-        width: 100%;
-    }        
-}
+    } 
+    main div.main-content{
+        width:50%;
 
-@media (max-width:480px){
+    } 
+    main button{
+        width: 150px;
+        height: 50px;
+        padding: 0 2px;
+        font-size: 14px;
+    }     
+
+}
+@media (min-width:576px) and (max-width:767px){
+    nav{
+        background-color: #5d5851;
+    }
+    nav div.container{
+        padding: 10px 50px;
+        position: relative;
+    }
+    nav div.logo-brand{
+    width: 20%;
+    }
+    nav div.logo-brand img{
+        width: 100%;
+    }
+    nav div.nav-items{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0; 
+        transform: translateY(100%);
+        background-color: #fff ;
+        font-weight: lighter;
+        padding: 0px 25px;
+    }
+    
+    nav ul.nav-list{
+        display: none ;
+    }
+    nav li.link-item{
+        border-bottom:.5px solid rgba(150, 149, 149, 0.295) ;
+        text-align: left;
+        width: 100%;
+        padding:5px 0;
+    }
+    nav li.link-item a{
+        display: block;
+        padding: 10px;
+        font-size: 17px;
+        color: black;
+        text-decoration: none;
+        transition:  1ms;
+    }
+    nav a#home{
+        color: black;
+    }
+    nav a#home:hover{
+        color:tan;
+    }
+    nav li.link-item:hover a{
+        transform: translateY(0) scale(1);
+        color: tan;
+    }
+    nav div.toggle-icon{
+        display: block;
+        color: #fff;
+    }
+    nav .toggle{
+        font-size: 25px;
+        cursor: pointer;
+    }
+    main div.main-content{
+        width:60%;
+    }
+    main h1{
+        font-weight: lighter;
+        font-size: 34px;
+        padding:10px 0 ;
+    }
+    main p{
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px ;
+        line-height: 30px;
+    }
+    main button{
+        width: 110px;
+        height: 50px;
+        padding: 0 2px;
+        font-size: 12px;
+    }
+}
+@media (max-width:575px){
+    nav{
+        background-color: #5d5851;
+    }
+    nav div.container{
+        padding: 10px 50px;
+        position: relative;
+    }
+    nav div.logo-brand img{
+        width: 100%;
+    }
+    nav div.nav-items{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0; 
+        transform: translateY(100%);
+        background-color: #fff ;
+        font-weight: lighter;
+        padding: 0px 25px;
+    }
+    
+    nav ul.nav-list{
+        display: none ;
+    }
+    nav li.link-item{
+        border-bottom:.5px solid rgba(150, 149, 149, 0.295) ;
+        text-align: left;
+        width: 100%;
+        padding:5px 0;
+    }
+    nav li.link-item a{
+        display: block;
+        padding: 10px;
+        font-size: 17px;
+        color: black;
+        text-decoration: none;
+        transition:  1ms;
+    }
+    nav a#home{
+        color: black;
+    }
+    nav a#home:hover{
+        color:tan;
+    }
+    nav li.link-item:hover a{
+        transform: translateY(0) scale(1);
+        color: tan;
+    }
+    nav div.toggle-icon{
+        display: block;
+        color: #fff;
+    }
+    nav .toggle{
+        font-size: 25px;
+        cursor: pointer;
+    }
     nav div.logo-brand{
         width: 30%;
-        }
-        main{
-            padding: 50px 10px;
-        }
-
-        main div.welcome{
-            padding:0 10px;
-            width: 90%;
-        }
-        main h1{
-            font-weight: lighter;
-            font-size: 34px;
-            padding:10px 0 ;
-        }
-        main p{
-            font-size: 15px;
-            font-family: 'Open Sans', sans-serif;
-            padding: 10px ;
-            line-height: 30px;
-        }
-
-        main button{
-            width: 40%;
-            height: 45px;
-            margin: 5px;
-            transition:background-image 1s, color 1s;
-            text-transform: uppercase;
-            font-size: 13px;
-        }
-
+    }
+    main div.main-content{
+        width:80%;
+    }
+    main h1{
+        font-weight: lighter;
+        font-size: 34px;
+        padding:10px 0 ;
+    }
+    main p{
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px ;
+        line-height: 30px;
+    }
+    main button{
+        width: 110px;
+        height: 50px;
+        padding: 0 2px;
+        font-size: 12px;
+    }
 }
+
+
+
+
