@@ -48,7 +48,7 @@ a{
 .bg-ff9800{
     background-color: #ff9800;
 }
-.bg-ae9768{
+.bg-toChange{
     background-color:#ae9768;
 }
 /******************************************************/
@@ -164,7 +164,7 @@ main button{
 }
 main button:hover{
     color: black;
-    background-color: #fff;
+    background-color: #fff !important;
 }
 /*xxl >=1440*/
 /*xl >=1200*/

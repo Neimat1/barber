@@ -27,8 +27,8 @@ div.aside-container{
     font-family: 'Open Sans', sans-serif;
     transition:background-color 1s, color 1s;
 }
-.aside-container button:hover{
-    background-color:#555;
+.aside-container .bg-toChange:hover{
+    background-color:#555 !important;
 }
 div.aside-navigation{
     position: fixed;

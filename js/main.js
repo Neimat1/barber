@@ -1,11 +1,24 @@
-let toggleIcon = document.querySelector(".toggle-icon");
-let toggle = document.querySelector(".toggle");
-let navList    = document.querySelector(".nav-list");
-let navItems   =document.querySelector(".nav-items");
-let asideCogs  = document.querySelector(".aside-cogs");
-let aside =document.querySelector("aside");
+let colors      =["#218fe6","#f44336","#e91e63","#9c27b0","#673ab7","#3f51b5","#00bcd4","#03a9f4","#607d8b","#795548","#ff5722","#ff9800"];
+let toggleIcon  = document.querySelector(".toggle-icon");
+let toggle      = document.querySelector(".toggle");
+let navList     = document.querySelector(".nav-list");
+let navItems    = document.querySelector(".nav-items");
+let asideCogs   = document.querySelector(".aside-cogs");
+let aside       = document.querySelector("aside");
+let bgToChange  = document.querySelectorAll(".bg-toChange");
+let asideColor  = document.getElementsByClassName("aside-color");
 
-console.log(asideCogs.classList)
+for(let index=0;index<asideColor.length;index++){
+    asideColor[index].addEventListener('click',function(){
+        for(let secindex=0;secindex<bgToChange.length;secindex++){
+            bgToChange[secindex].style.backgroundColor = colors[index];
+            bgToChange[secindex].style.cursor = "pointer";
+        }
+    })
+}
+
+
+// bgToChange[0].style.backgroundColor="red"
 
 toggleIcon.addEventListener("click",closeOpenToggle);
 function closeOpenToggle(){
@@ -37,3 +50,4 @@ function closeOpenCogs(){
         aside.style.transform ="translateX(100%)";
     }
 }
+
